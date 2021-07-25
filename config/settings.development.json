@@ -1,7 +1,39 @@
+
 {
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
     { "email": "john@foo.com", "password": "changeme" }
+  ],
+
+  "defaultWomenClothes": [
+    { "name": "Tropical Collage Tunic Dress",
+      "brand": "FARM",
+      "price": 59,
+      "image": "https://cdn.shopify.com/s/files/1/0077/6673/6963/products/294066_03_1360x.jpg?v=1626632668",
+      "size": "S",
+      "quantity": 3,
+      "description": "We don’t have enough compliments for so many incredible details in your new fave <3 The Tropical Collage Tunic Dress is fresh, colorful, and your pick to spread joy all around! It features - besides this must-have print -, crochet, ruched and beaded tassels detailing. The mini length is something to hold on to as well! Oh, and you can wear it looser or tighter with the belt :)",
+      "condition": "excellent" }
+  ],
+  "defaultMenClothes": [
+    { "name": "Mixed Black Prints Shirt",
+      "brand": "FARM",
+      "price": 59,
+      "image": "https://cdn.shopify.com/s/files/1/0077/6673/6963/products/293999_01_1360x.jpg?v=1625692967",
+      "size": "S",
+      "quantity": 3,
+      "description": "Well, you don’t need to look for the perfect Summer-ready shirt anymore! The Mixed Black Prints Uni Shirt brings not just our must-have prints in its easy fit, but it’s also a versatile top to wear showing (or not!) some skin and bikini tops when leaving the buttons open. Of course it’s the best match ever for the Mixed Black Prints Uni Shorts, don’t you think?",
+      "condition": "excellent" }
+  ],
+  "defaultKidsClothes": [
+    { "name": "Hearts Scarf",
+      "brand": "FARM",
+      "price": 39,
+      "image": "https://cdn.shopify.com/s/files/1/0077/6673/6963/products/R2007005_01_1360x.jpg?v=1607552982",
+      "size": "S",
+      "quantity": 3,
+      "description": "No breeze can hit you at this lovely point: with the Hearts Scarf, it’s easy-and-cute to keep yourself warm, no matter which outfit you’re planning to wear this season. Actually, this scarf is a timeless choice for your wardrobe, don’t you think so?",
+      "condition": "excellent" }
   ],
 
   "defaultData": [
