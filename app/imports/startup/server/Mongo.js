@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Women } from '../../api/woman/Women';
 import { Kids } from '../../api/kid/Kids';
 import { Men } from '../../api/man/Men';
+import { WomanItemReviews } from '../../api/womanItemReview/WomanItemReviews';
 
 /* eslint-disable no-console */
 
@@ -19,6 +20,11 @@ function addMenClothes(data) {
 function addKidsClothes(data) {
   console.log(`  Adding: ${data.name}`);
   Kids.collection.insert(data);
+}
+
+function addWomanItemReview(data) {
+  console.log(`  Adding: ${data.womanItemName} (${data.owner})`);
+  WomanItemReviews.collection.insert(data);
 }
 
 if (Women.collection.find().count() === 0) {
@@ -42,3 +48,9 @@ if (Kids.collection.find().count() === 0) {
   }
 }
 
+if (WomanItemReviews.collection.find().count() === 0) {
+  if (Meteor.settings.defaultProductReviews) {
+    console.log('Creating default Reviews.');
+    Meteor.settings.defaultProductReviews.map(data => addWomanItemReview(data));
+  }
+}

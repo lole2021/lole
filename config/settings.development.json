@@ -36,6 +36,17 @@
       "condition": "excellent" }
   ],
 
+  "defaultProductReviews": [
+    {
+      "createdAt": "04/05/21",
+      "womenItemName": "Tropical Collage Tunic Dress",
+      "brand": "FARM",
+      "review": "There's a quiz every week, plus two midterms and there's not enough time to complete them. Most coding quizzes I don't get the chance to finish, no matter how well I understand the material since we're only given two minutes. He spends class time going over how to do the homework, which I appreciate. Unless you have friends, you work alone in lab.",
+      "owner": "john@foo.com",
+      "rating": "3"
+    }
+  ],
+
   "defaultData": [
     { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },

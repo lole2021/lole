@@ -21,7 +21,7 @@ class Woman extends React.Component {
           <br/>
           <Card.Header>
             <Header textAlign='center'>
-              <Button size='tiny' color='black' as={NavLink} exact to={`/professor/${this.props.woman._id}`}>Visit</Button>
+              <Button size='tiny' color='black' as={NavLink} exact to={`/woman/${this.props.woman._id}`}>Visit</Button>
             </Header>
           </Card.Header>
         </Card.Content>

@@ -18,6 +18,8 @@ import Signout from '../pages/Signout';
 import WomenClothes from '../pages/WomenClothes';
 import MenClothes from '../pages/MenClothes';
 import KidsClothes from '../pages/KidsClothes';
+import ProductReview from '../pages/ProductReview';
+import ProfessorReviewPage from '../pages/ProfessorReviewPage';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -34,6 +36,8 @@ class App extends React.Component {
             <Route path="/women" component={WomenClothes}/>
             <Route path="/men" component={MenClothes}/>
             <Route path="/kids" component={KidsClothes}/>
+            <Route path="/review/:_id" component= {ProfessorReviewPage}/>
+            <Route path="/woman/:_id" component= {ProductReview}/>
             <ProtectedRoute path="/list" component={ListStuff}/>
             <ProtectedRoute path="/add" component={AddStuff}/>
             <ProtectedRoute path="/edit/:_id" component={EditStuff}/>

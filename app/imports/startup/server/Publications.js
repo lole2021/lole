@@ -3,6 +3,22 @@ import { Roles } from 'meteor/alanning:roles';
 import { Women } from '../../api/woman/Women';
 import { Men } from '../../api/man/Men';
 import { Kids } from '../../api/kid/Kids';
+import { Reviews } from '../../api/review/Reviews';
+import { WomanItemReviews } from '../../api/womanItemReview/WomanItemReviews';
+
+Meteor.publish(WomanItemReviews.userPublicationName, function () {
+  if (this.userId) {
+    return WomanItemReviews.collection.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish(Reviews.userPublicationName, function () {
+  if (this.userId) {
+    return Reviews.collection.find({});
+  }
+  return this.ready();
+});
 
 Meteor.publish(Women.userPublicationName, function () {
   if (this.userId) {

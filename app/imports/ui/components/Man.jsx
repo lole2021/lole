@@ -7,25 +7,25 @@ import { withRouter, Link, NavLink } from 'react-router-dom';
 class Man extends React.Component {
   render() {
     return (
-        <Card centered>
-          <Card.Content>
-            <Image
-                src={this.props.man.image}
-            />
-            <Card.Header>
-              <Link to={`/men/${this.props.man._id}`}>
-                {this.props.man.name} [{this.props.man.brand}]
-              </Link>
-            </Card.Header>
-            <Card.Meta>${this.props.man.price}</Card.Meta>
-            <br/>
-            <Card.Header>
-              <Header textAlign='center'>
-                <Button size='tiny' color='black' as={NavLink} exact to={`/professor/${this.props.man._id}`}>Visit</Button>
-              </Header>
-            </Card.Header>
-          </Card.Content>
-        </Card>
+      <Card centered>
+        <Card.Content>
+          <Image
+            src={this.props.man.image}
+          />
+          <Card.Header>
+            <Link to={`/men/${this.props.man._id}`}>
+              {this.props.man.name} [{this.props.man.brand}]
+            </Link>
+          </Card.Header>
+          <Card.Meta>${this.props.man.price}</Card.Meta>
+          <br/>
+          <Card.Header>
+            <Header textAlign='center'>
+              <Button size='tiny' color='black' as={NavLink} exact to={`/professor/${this.props.man._id}`}>Visit</Button>
+            </Header>
+          </Card.Header>
+        </Card.Content>
+      </Card>
     );
   }
 }
