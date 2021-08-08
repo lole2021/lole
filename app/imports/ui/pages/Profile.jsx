@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Container, Header, Loader, Image, Grid, Segment, Form, Divider, Icon } from 'semantic-ui-react';
+import { Card, Container, Header, Loader, Image, Grid, Segment, Form, Icon } from 'semantic-ui-react';
 import { AutoForm, SubmitField, TextField, LongTextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
