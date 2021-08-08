@@ -5,6 +5,11 @@
     { "email": "john@foo.com", "password": "changeme" }
   ],
 
+  "defaultProfiles": [
+    { "email": "admin@foo.com", "firstName": "admin", "lastName": "admin", "bio": "Admin", "picture": "https://react.semantic-ui.com/images/avatar/large/matthew.png", "phone": "(310) 345-7536 " },
+    { "email": "john@foo.com", "firstName": "John", "lastName": "Smith", "bio": "Welcome to my closet!", "picture": "https://react.semantic-ui.com/images/avatar/large/daniel.jpg", "phone:": "(310) 345-7536 "}
+  ],
+
   "defaultWomenClothes": [
     { "name": "Embroidered Scarf Blouse",
       "brand": "Farm Rio",
