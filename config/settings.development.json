@@ -6,14 +6,21 @@
   ],
 
   "defaultWomenClothes": [
-    { "name": "Tropical Collage Tunic Dress",
-      "brand": "FARM",
-      "price": 59,
-      "image": "https://cdn.shopify.com/s/files/1/0077/6673/6963/products/294066_03_1360x.jpg?v=1626632668",
-      "size": "S",
-      "quantity": 3,
-      "description": "We don’t have enough compliments for so many incredible details in your new fave <3 The Tropical Collage Tunic Dress is fresh, colorful, and your pick to spread joy all around! It features - besides this must-have print -, crochet, ruched and beaded tassels detailing. The mini length is something to hold on to as well! Oh, and you can wear it looser or tighter with the belt :)",
-      "condition": "excellent" }
+    { "name": "Embroidered Scarf Blouse",
+      "brand": "Farm Rio",
+      "category": "woman",
+      "oldprice": 230,
+      "newprice": 130,
+      "image1": "https://di2ponv0v5otw.cloudfront.net/posts/2021/04/26/608712f960fdeda4eef8ad86/m_6087134343895fe91996b9bf.jpg",
+      "image2": "https://di2ponv0v5otw.cloudfront.net/posts/2021/04/26/608712f960fdeda4eef8ad86/m_608713527ec30cb33f8fe4b4.jpg",
+      "image3": "https://di2ponv0v5otw.cloudfront.net/posts/2021/04/26/608712f960fdeda4eef8ad86/m_608713013bad6da39a90aea1.jpg",
+      "image4": "https://di2ponv0v5otw.cloudfront.net/posts/2021/04/26/608712f960fdeda4eef8ad86/m_608713e4920786d1c93c932b.jpg",
+      "size": "L",
+      "status": "In Stock",
+      "description": "An absolutely GORGEOUS and delicate 1/2 sleeve cropped top with embroidered floral and pineapple motifs. Square neckline. Kimono sleeves. Open embroidered detailing and stitching thorughout top. Smocked back. Fabric content- 55% linen 45% cotton / lining: 100% cotton.",
+      "condition": "excellent",
+      "owner": "john@foo.com"
+    }
   ],
   "defaultMenClothes": [
     { "name": "Mixed Black Prints Shirt",
