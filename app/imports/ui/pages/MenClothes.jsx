@@ -5,7 +5,7 @@ import { Container, Loader, Card, Header, Input } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Men } from '../../api/man/Men';
-import Man from '../components/Man'
+import Man from '../components/Man';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class MenClothes extends React.Component {
