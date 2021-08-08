@@ -34,11 +34,10 @@ class WomenClothes extends React.Component {
 
     return (
       <Container>
-        <Header as="h2" textAlign="center">WOMEN</Header>
         <br/><br/>
         <Input inverted type='text' size='large' placeholder='Search here...' icon='search' fluid
           onChange={this.handleChange}/>
-        <br/><br/><br/><br/>
+        <br/>
         <Card.Group>
           {sorted.map((women, index) => <Woman key={index} woman={women}/>)}
         </Card.Group>
