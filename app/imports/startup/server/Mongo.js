@@ -3,7 +3,7 @@ import { Women } from '../../api/woman/Women';
 import { Kids } from '../../api/kid/Kids';
 import { Men } from '../../api/man/Men';
 import { WomanItemReviews } from '../../api/womanItemReview/WomanItemReviews';
-
+import { Profiles } from '../../api/profile/Profiles';
 /* eslint-disable no-console */
 
 // Initialize the database with a default data document.
@@ -20,6 +20,11 @@ function addMenClothes(data) {
 function addKidsClothes(data) {
   console.log(`  Adding: ${data.name}`);
   Kids.collection.insert(data);
+}
+
+function addProfile({ email, firstName, lastName, bio, picture, phone }) {
+  console.log(`  Defining profile ${email}`);
+  Profiles.collection.insert({ email, firstName, lastName, bio, picture, phone });
 }
 
 function addWomanItemReview(data) {
@@ -52,5 +57,12 @@ if (WomanItemReviews.collection.find().count() === 0) {
   if (Meteor.settings.defaultProductReviews) {
     console.log('Creating default Reviews.');
     Meteor.settings.defaultProductReviews.map(data => addWomanItemReview(data));
+  }
+}
+
+if (Profiles.collection.find().count() === 0) {
+  if (Meteor.settings.defaultProfiles) {
+    console.log('Creating default Profiles.');
+    Meteor.settings.defaultProfiles.map(data => addProfile(data));
   }
 }

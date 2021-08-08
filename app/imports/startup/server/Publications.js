@@ -5,6 +5,9 @@ import { Men } from '../../api/man/Men';
 import { Kids } from '../../api/kid/Kids';
 import { Reviews } from '../../api/review/Reviews';
 import { WomanItemReviews } from '../../api/womanItemReview/WomanItemReviews';
+import { Profiles } from '../../api/profile/Profiles';
+
+Meteor.publish(Profiles.userPublicationName, () => Profiles.collection.find());
 
 Meteor.publish(WomanItemReviews.userPublicationName, function () {
   if (this.userId) {

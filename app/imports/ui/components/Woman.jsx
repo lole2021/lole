@@ -26,7 +26,7 @@ class Woman extends React.Component {
         </Card.Content>
         <Card.Content>
           <Card.Meta>
-            <Icon name='user'/>   {this.props.woman.owner}
+            <Icon name='user'/>   {this.props.woman.email}
           </Card.Meta>
         </Card.Content>
       </Card>
