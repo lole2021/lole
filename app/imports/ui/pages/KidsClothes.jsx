@@ -1,11 +1,11 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { _ } from 'meteor/underscore';
-import { Container, Loader, Card, Header, Input } from 'semantic-ui-react';
+import { Container, Loader, Card, Input } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import { Kids } from '../../api/kid/Kids';
 import Kid from '../components/Kid';
+import { Kids } from '../../api/kid/Kids';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class KidsClothes extends React.Component {
@@ -16,10 +16,10 @@ class KidsClothes extends React.Component {
 
   handleChange = (e, { value }) => this.setState({ search: value });
 
-  KidsSearch = (kid) => {
+  WomenSearch = (woman) => {
     const { search } = this.state;
     const lowerCase = search.toLowerCase();
-    return kid.name.toLowerCase().startsWith(lowerCase);
+    return woman.name.toLowerCase().startsWith(lowerCase);
   }
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
@@ -29,16 +29,15 @@ class KidsClothes extends React.Component {
 
   // Render the page once subscriptions have been received.
   renderPage() {
-    const allFirstNames = _.filter(this.props.kids, this.KidsSearch);
-    const sorted = _.sortBy(allFirstNames, 'firstName');
+    const allFirstNames = _.filter(this.props.kids, this.WomenSearch);
+    const sorted = _.sortBy(allFirstNames, 'name');
 
     return (
       <Container>
-        <Header as="h2" textAlign="center">KIDS</Header>
         <br/><br/>
         <Input inverted type='text' size='large' placeholder='Search here...' icon='search' fluid
           onChange={this.handleChange}/>
-        <br/><br/><br/><br/>
+        <br/>
         <Card.Group>
           {sorted.map((kids, index) => <Kid key={index} kid={kids}/>)}
         </Card.Group>

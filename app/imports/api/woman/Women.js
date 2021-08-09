@@ -12,9 +12,9 @@ class WomenCollection {
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       name: String,
-      category:String,
+      category: String,
       brand: String,
-      oldprice: { type: Number, optional: true},
+      oldprice: { type: Number, optional: true },
       newprice: Number,
       image1: String,
       image2: String,
