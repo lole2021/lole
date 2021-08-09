@@ -1,5 +1,9 @@
 
 {
+  "monti": {
+    "appId": "D6eenEw42iFCgeujp",
+    "appSecret": "45e3267e-f799-4a8f-b906-448f42ead67f"
+  },
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
     { "email": "john@foo.com", "password": "changeme" }
@@ -78,5 +82,7 @@
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
-  ]
+  ],
+
+  "loadAssetsFile":  false
 }
