@@ -18,9 +18,10 @@ import Signout from '../pages/Signout';
 import WomenClothes from '../pages/WomenClothes';
 import MenClothes from '../pages/MenClothes';
 import KidsClothes from '../pages/KidsClothes';
-import ProductReview from '../pages/ProductReview';
+import WomanItemView from '../pages/WomanItemView';
+import ManItemView from '../pages/ManItemView';
+import KidItemView from '../pages/KidItemView';
 import ProfessorReviewPage from '../pages/ProfessorReviewPage';
-import Profile from '../pages/Profile';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -38,7 +39,10 @@ class App extends React.Component {
             <Route path="/men" component={MenClothes}/>
             <Route path="/kids" component={KidsClothes}/>
             <Route path="/review/:_id" component= {ProfessorReviewPage}/>
-            <Route path="/woman/:_id" component= {ProductReview}/>
+            <Route path="/woman/:_id" component= {WomanItemView}/>
+            <Route path="/man/:_id" component= {ManItemView}/>
+            <Route path="/kid/:_id" component= {KidItemView}/>
+            <Route path="/kid/:_id" component= {KidItemView}/>
             <ProtectedRoute path="/profile" component={Profile}/>
             <ProtectedRoute path="/list" component={ListStuff}/>
             <ProtectedRoute path="/add" component={AddStuff}/>

@@ -30,7 +30,7 @@ class WomenClothes extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     const allFirstNames = _.filter(this.props.women, this.WomenSearch);
-    const sorted = _.sortBy(allFirstNames, 'firstName');
+    const sorted = _.sortBy(allFirstNames, 'name');
 
     return (
       <Container>

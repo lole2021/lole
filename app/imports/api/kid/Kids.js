@@ -12,13 +12,19 @@ class KidsCollection {
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       name: String,
+      category: String,
       brand: String,
-      image: String,
-      price: Number,
-      quantity: Number,
+      oldprice: { type: Number, optional: true },
+      newprice: Number,
+      image1: String,
+      image2: String,
+      image3: String,
+      image4: String,
+      status: String,
       description: String,
       condition: String,
       size: String,
+      owner: String,
     }, { tracker: Tracker });
     // Ensure collection documents obey schema.
     this.collection.attachSchema(this.schema);
