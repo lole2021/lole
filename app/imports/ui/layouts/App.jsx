@@ -22,6 +22,7 @@ import WomanItemView from '../pages/WomanItemView';
 import ManItemView from '../pages/ManItemView';
 import KidItemView from '../pages/KidItemView';
 import ProfessorReviewPage from '../pages/ProfessorReviewPage';
+import Profile from '../pages/Profile';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
