@@ -8,10 +8,10 @@ class Landing extends React.Component {
     return (
       <Grid style={landingStyle} id='landing-page' container centered>
         <Grid.Column width={11}>
-          <h2 className="landing" >Our Mission</h2>
-          <p>Our mission is to provide unforgettable and good experiences memories to last a lifetime.
-            Offer our customers special pieces of excellent quality and price. With the use of our customers,
-            users will feel even more confident. </p>
+          <h2 className="landing" >Contact Us</h2>
+          <p className="mission-text">For any inquiries, please do not hesitate to contact us. </p>
+          <p className="mission-text">Tel: (808)123-4567 </p>
+          <p className="mission-text">E-mail: <a className="mission-text" href=''>admin@lole.com</a> </p>
           <Image size='massive' src='/images/landing.png'/>
         </Grid.Column>
 

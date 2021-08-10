@@ -6,13 +6,13 @@ class Landing extends React.Component {
   render() {
     const landingStyle = { paddingBottom: '50px', paddingTop: '50px' };
     return (
-      <Grid style={landingStyle} id='landing-page' container centered>
-        <Grid.Column width={11}>
-          <h2 className="landing" >Discover new items for your closet!</h2>
-          <Image size='massive' src='/images/landing.png'/>
-        </Grid.Column>
-
-      </Grid>
+        <Grid style={landingStyle} id='landing-page' container centered>
+          <Grid.Column width={11}>
+            <h2 className="landing">Q&A</h2>
+            <p className="mission-text">.... </p>
+            <Image size='massive' src='/images/landing.png'/>
+          </Grid.Column>
+        </Grid>
     );
   }
 }

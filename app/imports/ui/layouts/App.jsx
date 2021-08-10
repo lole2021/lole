@@ -24,6 +24,8 @@ import KidItemView from '../pages/KidItemView';
 import ProfessorReviewPage from '../pages/ProfessorReviewPage';
 import Profile from '../pages/Profile';
 import OurMission from '../pages/OurMission';
+import QandA from '../pages/QandA';
+import ContactUs from '../pages/ContactUs';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -46,6 +48,8 @@ class App extends React.Component {
             <Route path="/kid/:_id" component= {KidItemView}/>
             <Route path="/kid/:_id" component= {KidItemView}/>
             <Route path="/ourmission" component= {OurMission}/>
+            <Route path="/qanda" component= {QandA}/>
+            <Route path="/contactus" component= {ContactUs}/>
             <ProtectedRoute path="/profile" component={Profile}/>
             <ProtectedRoute path="/list" component={ListStuff}/>
             <ProtectedRoute path="/add" component={AddStuff}/>

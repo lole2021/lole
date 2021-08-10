@@ -10,7 +10,7 @@ class Footer extends React.Component {
       <Grid>
         <Menu inverted style={menuStyle} widths={3}>
           <Menu.Item>
-            <Link to={'/q&a'}>Q&A</Link>
+            <Link to={'/qanda'}>Q&A</Link>
           </Menu.Item>
           <Menu.Item>
             <Link to={'/ourmission'}>Our Mission</Link>
