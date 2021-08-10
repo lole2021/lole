@@ -33,7 +33,7 @@ class WomenClothes extends React.Component {
     const sorted = _.sortBy(allFirstNames, 'name');
 
     return (
-      <Container>
+      <Container style={{ paddingBottom: '50px' }}>
         <br/><br/>
         <Input inverted type='text' size='large' placeholder='Search here...' icon='search' fluid
           onChange={this.handleChange}/>

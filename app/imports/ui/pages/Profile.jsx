@@ -45,7 +45,7 @@ class Profile extends React.Component {
     const bridge = new SimpleSchema2Bridge(formSchema);
     const profile = Profiles.collection.findOne({ email });
     return (
-      <Container>
+      <Container style = {{ paddingBottom: '50px' }}>
         <Header style={{ marginTop: '40px' }} as="h4" textAlign="center">Edit My Profile</Header>
         <Grid divided='vertically'>
           <Grid.Row>

@@ -8,7 +8,10 @@ class Landing extends React.Component {
     return (
       <Grid style={landingStyle} id='landing-page' container centered>
         <Grid.Column width={11}>
-          <h2 className="landing" >Discover new items for your closet!</h2>
+          <h2 className="landing" >Our Mission</h2>
+          <p>Our mission is to provide unforgettable and good experiences memories to last a lifetime.
+            Offer our customers special pieces of excellent quality and price. With the use of our customers,
+            users will feel even more confident. </p>
           <Image size='massive' src='/images/landing.png'/>
         </Grid.Column>
 
