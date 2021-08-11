@@ -14,9 +14,9 @@ class AddReview extends React.Component {
 
   // On submit, insert the data.
   submit(data, formRef) {
-    const { review, rating, contactId, createdAt } = data;
+    const { review, contactId, createdAt } = data;
     const owner = Meteor.user().username;
-    Reviews.collection.insert({ review, rating, contactId, createdAt, owner },
+    Reviews.collection.insert({ review, contactId, createdAt, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -33,7 +33,6 @@ class AddReview extends React.Component {
       <AutoForm placeholder={true} ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
         <Segment>
           <Header>Write A Review</Header>
-          <NumField decimal={false} max={5} min={1} label="Rating" name='rating' placeholder='From 1 to 5'/>
           <LongTextField label="Review" name='review'/>
           <SubmitField centered value='Submit'/>
           <ErrorsField/>
