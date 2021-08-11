@@ -21,7 +21,6 @@ import KidsClothes from '../pages/KidsClothes';
 import WomanItemView from '../pages/WomanItemView';
 import ManItemView from '../pages/ManItemView';
 import KidItemView from '../pages/KidItemView';
-import ProfessorReviewPage from '../pages/ProfessorReviewPage';
 import Profile from '../pages/Profile';
 import OurMission from '../pages/OurMission';
 import QandA from '../pages/QandA';
@@ -42,7 +41,6 @@ class App extends React.Component {
             <Route path="/women" component={WomenClothes}/>
             <Route path="/men" component={MenClothes}/>
             <Route path="/kids" component={KidsClothes}/>
-            <Route path="/review/:_id" component= {ProfessorReviewPage}/>
             <Route path="/woman/:_id" component= {WomanItemView}/>
             <Route path="/man/:_id" component= {ManItemView}/>
             <Route path="/kid/:_id" component= {KidItemView}/>

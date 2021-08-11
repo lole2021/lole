@@ -2,7 +2,6 @@ import { Meteor } from 'meteor/meteor';
 import { Women } from '../../api/woman/Women';
 import { Kids } from '../../api/kid/Kids';
 import { Men } from '../../api/man/Men';
-import { WomanItemReviews } from '../../api/womanItemReview/WomanItemReviews';
 import { Profiles } from '../../api/profile/Profiles';
 /* eslint-disable no-console */
 
@@ -27,11 +26,6 @@ function addProfile({ email, firstName, lastName, bio, picture, phone }) {
   Profiles.collection.insert({ email, firstName, lastName, bio, picture, phone });
 }
 
-function addWomanItemReview(data) {
-  console.log(`  Adding: ${data.womanItemName} (${data.owner})`);
-  WomanItemReviews.collection.insert(data);
-}
-
 if (Women.collection.find().count() === 0) {
   if (Meteor.settings.defaultWomenClothes) {
     console.log('Creating default Women Clothes.');
@@ -50,13 +44,6 @@ if (Kids.collection.find().count() === 0) {
   if (Meteor.settings.defaultKidsClothes) {
     console.log('Creating default Kid Clothes.');
     Meteor.settings.defaultKidsClothes.map(data => addKidsClothes(data));
-  }
-}
-
-if (WomanItemReviews.collection.find().count() === 0) {
-  if (Meteor.settings.defaultProductReviews) {
-    console.log('Creating default Reviews.');
-    Meteor.settings.defaultProductReviews.map(data => addWomanItemReview(data));
   }
 }
 

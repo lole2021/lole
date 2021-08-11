@@ -1,12 +1,12 @@
 import React from 'react';
-import { Grid, Loader, Image, Icon } from 'semantic-ui-react';
+import { Grid, Loader, Image, Icon, Card, Feed } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Women } from '../../api/woman/Women';
-// import Review from '../components/Review';
-// import { Reviews } from '../../api/review/Reviews';
-// import AddReview from '../components/AddReview';
+import Review from '../components/Review';
+import { Reviews } from '../../api/review/Reviews';
+import AddReview from '../components/AddReview';
 
 /** Renders the Page for editing a single document. */
 class WomanItemView extends React.Component {
@@ -18,7 +18,7 @@ class WomanItemView extends React.Component {
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   renderPage() {
-    // const filter = this.props.reviews.filter(review => review.contactId === this.props.woman._id);
+    const filter = this.props.reviews.filter(review => review.contactId === this.props.woman._id);
     return (
       <Grid container columns={3}>
         <Grid.Column width={8} style={{ marginLeft: '-100px' }} >
@@ -41,6 +41,19 @@ class WomanItemView extends React.Component {
           <p>ABOUT THE SELLER</p>
           <Icon name='user'/> <em>{this.props.woman.owner}</em>
         </Grid.Column>
+
+        <Grid.Column width={10}>
+          <AddReview contactId={this.props.woman._id}/>
+          <Card fluid>
+            <Card.Content>
+            </Card.Content>
+            <Card.Content>
+              <Feed>
+                {filter.map((review, index) => <Review key={index} review={review}/>)}
+              </Feed>
+            </Card.Content>
+          </Card>
+        </Grid.Column>
       </Grid>
     );
   }
@@ -49,6 +62,7 @@ class WomanItemView extends React.Component {
 // Require the presence of a Contact document in the props object. Uniforms adds 'model' to the props, which we use.
 WomanItemView.propTypes = {
   woman: PropTypes.object,
+  reviews: PropTypes.array.isRequired,
   model: PropTypes.object,
   ready: PropTypes.bool.isRequired,
 };
@@ -57,10 +71,13 @@ WomanItemView.propTypes = {
 export default withTracker(({ match }) => {
   const documentId = match.params._id;
   const subscription = Meteor.subscribe(Women.userPublicationName);
-  const ready = subscription.ready();
+  const subscription2 = Meteor.subscribe(Reviews.userPublicationName);
+  const ready = subscription.ready() && subscription2.ready();
   const woman = Women.collection.findOne(documentId);
+  const reviews = Reviews.collection.find({}).fetch();
   return {
     woman,
+    reviews,
     ready,
   };
 })(WomanItemView);

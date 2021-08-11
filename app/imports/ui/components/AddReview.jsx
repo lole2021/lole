@@ -14,14 +14,14 @@ class AddReview extends React.Component {
 
   // On submit, insert the data.
   submit(data, formRef) {
-    const { review, rating, contactId, createdAt, womanItemName } = data;
+    const { review, rating, contactId, createdAt } = data;
     const owner = Meteor.user().username;
-    Reviews.collection.insert({ review, rating, contactId, createdAt, womanItemName, owner },
+    Reviews.collection.insert({ review, rating, contactId, createdAt, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
         } else {
-          swal('Success', 'Review added successfully', 'success');
+          swal('Success', 'Comment added successfully', 'success');
           formRef.reset();
         }
       });
