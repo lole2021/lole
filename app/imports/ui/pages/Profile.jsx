@@ -3,21 +3,13 @@ import { Card, Container, Header, Loader, Image, Grid, Segment, Form, Icon } fro
 import { AutoForm, SubmitField, TextField, LongTextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
-import SimpleSchema from 'simpl-schema';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Profiles } from '../../api/profile/Profiles';
 
 /** Create a schema to specify the structure of the data to appear in the form. */
-const formSchema = new SimpleSchema({
-  email: { type: String, label: 'Email', unique: true },
-  firstName: { type: String, label: 'First', optional: false },
-  lastName: { type: String, label: 'Last', optional: false },
-  bio: { type: String, label: 'Bio', optional: true },
-  phone: { type: String, label: 'Phone', optional: true },
-  picture: { type: String, label: 'Profile Picture', optional: true },
-});
+const bridge = new SimpleSchema2Bridge(Profiles.schema);
 
 /** Renders the Profile page */
 class Profile extends React.Component {
@@ -42,7 +34,6 @@ class Profile extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     const email = Meteor.user().username;
-    const bridge = new SimpleSchema2Bridge(formSchema);
     const profile = Profiles.collection.findOne({ email });
     return (
       <Container style = {{ paddingBottom: '50px' }}>
