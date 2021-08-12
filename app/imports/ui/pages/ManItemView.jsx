@@ -1,12 +1,12 @@
 import React from 'react';
-import { Grid, Loader, Image, Icon } from 'semantic-ui-react';
+import { Grid, Loader, Image, Icon, Card, Feed } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Men } from '../../api/man/Men';
-// import Review from '../components/Review';
-// import { Reviews } from '../../api/review/Reviews';
-// import AddReview from '../components/AddReview';
+import { Comments } from '../../api/comment/Comments';
+import AddComment from '../components/AddComment';
+import Comment from '../components/Comment';
 
 /** Renders the Page for editing a single document. */
 class WomanItemView extends React.Component {
@@ -18,7 +18,7 @@ class WomanItemView extends React.Component {
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   renderPage() {
-    // const filter = this.props.reviews.filter(review => review.contactId === this.props.woman._id);
+    const filter = this.props.comments.filter(comment => comment.contactId === this.props.man._id);
     return (
       <Grid container columns={3}>
         <Grid.Column width={8} style={{ marginLeft: '-100px' }} >
@@ -40,6 +40,15 @@ class WomanItemView extends React.Component {
           <p><em>{this.props.man.description}</em></p>
           <p>ABOUT THE SELLER</p>
           <Icon name='user'/> <em>{this.props.man.owner}</em>
+          <br/><br/>
+          <Card fluid>
+            <Card.Content>
+              <Feed>
+                {filter.map((comment, index) => <Comment key={index} comment={comment}/>)}
+              </Feed>
+            </Card.Content>
+          </Card>
+          <AddComment contactId={this.props.man._id}/>
         </Grid.Column>
       </Grid>
     );
@@ -49,6 +58,7 @@ class WomanItemView extends React.Component {
 // Require the presence of a Contact document in the props object. Uniforms adds 'model' to the props, which we use.
 WomanItemView.propTypes = {
   man: PropTypes.object,
+  comments: PropTypes.array.isRequired,
   model: PropTypes.object,
   ready: PropTypes.bool.isRequired,
 };
@@ -57,10 +67,13 @@ WomanItemView.propTypes = {
 export default withTracker(({ match }) => {
   const documentId = match.params._id;
   const subscription = Meteor.subscribe(Men.userPublicationName);
-  const ready = subscription.ready();
+  const subscription2 = Meteor.subscribe(Comments.userPublicationName);
+  const ready = subscription.ready() && subscription2.ready();
+  const comments = Comments.collection.find({}).fetch();
   const man = Men.collection.findOne(documentId);
   return {
     man,
+    comments,
     ready,
   };
 })(WomanItemView);

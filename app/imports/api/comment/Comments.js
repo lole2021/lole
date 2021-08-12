@@ -5,15 +5,15 @@ import { Tracker } from 'meteor/tracker';
 /**
  * The StuffsCollection. It encapsulates state and variable values for stuff.
  */
-class ReviewsCollection {
+class CommentsCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'ReviewsCollection';
+    this.name = 'CommentsCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      review: String,
+      comment: String,
       contactId: String,
       createdAt: Date,
     }, { tracker: Tracker });
@@ -27,6 +27,6 @@ class ReviewsCollection {
 
 /**
  * The singleton instance of the StuffsCollection.
- * @type {ReviewsCollection}
+ * @type {CommentsCollection}
  */
-export const Reviews = new ReviewsCollection();
+export const Comments = new CommentsCollection();

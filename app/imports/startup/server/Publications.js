@@ -3,14 +3,15 @@ import { Roles } from 'meteor/alanning:roles';
 import { Women } from '../../api/woman/Women';
 import { Men } from '../../api/man/Men';
 import { Kids } from '../../api/kid/Kids';
-import { Reviews } from '../../api/review/Reviews';
+// eslint-disable-next-line import/named
+import { Comments } from '../../api/comment/Comments';
 import { Profiles } from '../../api/profile/Profiles';
 
 Meteor.publish(Profiles.userPublicationName, () => Profiles.collection.find());
 
-Meteor.publish(Reviews.userPublicationName, function () {
+Meteor.publish(Comments.userPublicationName, function () {
   if (this.userId) {
-    return Reviews.collection.find({});
+    return Comments.collection.find({});
   }
   return this.ready();
 });
