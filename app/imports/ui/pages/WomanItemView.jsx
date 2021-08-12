@@ -40,19 +40,15 @@ class WomanItemView extends React.Component {
           <p><em>{this.props.woman.description}</em></p>
           <p>ABOUT THE SELLER</p>
           <Icon name='user'/> <em>{this.props.woman.owner}</em>
-        </Grid.Column>
-
-        <Grid.Column width={10}>
-          <AddReview contactId={this.props.woman._id}/>
+          <br/><br/>
           <Card fluid>
-            <Card.Content>
-            </Card.Content>
             <Card.Content>
               <Feed>
                 {filter.map((review, index) => <Review key={index} review={review}/>)}
               </Feed>
             </Card.Content>
           </Card>
+          <AddReview contactId={this.props.woman._id}/>
         </Grid.Column>
       </Grid>
     );

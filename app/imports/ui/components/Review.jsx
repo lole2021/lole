@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import { Feed, Rating } from 'semantic-ui-react';
+import { Feed } from 'semantic-ui-react';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Review extends React.Component {
@@ -15,7 +15,7 @@ class Review extends React.Component {
           <Feed.Summary>
             {this.props.review.review}
           </Feed.Summary>
-          <br/><br/>
+          <br/>
         </Feed.Content>
       </Feed.Event>
     );

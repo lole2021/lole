@@ -31,8 +31,8 @@ class AddReview extends React.Component {
     let fRef = null;
     return (
       <AutoForm placeholder={true} ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
-        <Segment>
-          <Header>Write A Review</Header>
+        <Segment style={{ backgroundColor: '#d9cbb6' }}>
+          <Header>Write A Comment</Header>
           <LongTextField label="Review" name='review'/>
           <SubmitField centered value='Submit'/>
           <ErrorsField/>
