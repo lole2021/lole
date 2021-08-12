@@ -37,28 +37,26 @@ class AddUser extends React.Component {
     const profile = Profiles.collection.findOne({ email });
     const model = _.extend({}, profile);
     return (
-      <div className='pages-background' id='add-user-page' style={{ paddingTop: '20px' }}>
-        <Grid className='containers' id="AddUser-page" container centered>
-          <Grid.Column>
-            <AutoForm model={model} schema={bridge} onSubmit={data => this.submit(data)}>
-              <Header as="h1" textAlign="center">Welcome to Grub-n-Go</Header>
-              <Segment>
-                <Form.Group widths={'equal'}>
-                  <TextField id='firstName' name='firstName' showInlineError={true} placeholder={'First Name'}/>
-                  <TextField id='lastName' name='lastName' showInlineError={true} placeholder={'Last Name'}/>
-                  <TextField name='email' showInlineError={true} placeholder={'email'}/>
-                </Form.Group>
-                <LongTextField id='bio' name='bio' placeholder='Write a little bit about yourself.'/>
-                <Form.Group widths={'equal'}>
-                  <TextField name='phone' id='phone' showInlineError={true} placeholder={'Title'}/>
-                  <TextField name='picture' id='picture' showInlineError={true} placeholder={'URL to picture'}/>
-                </Form.Group>
-                <SubmitField id='AddUser-page-submit' value='Update'/>
-              </Segment>
-            </AutoForm>
-          </Grid.Column>
-        </Grid>
-      </div>
+      <Grid container centered style={{ paddingTop: '30px', paddingBottom: '40px' }}>
+        <Grid.Column width={8}>
+          <AutoForm model={model} schema={bridge} onSubmit={data => this.submit(data)}>
+            <Header as="h2" textAlign="center">Welcome to Lole</Header>
+            <Segment style={{ backgroundColor: '#d9cbb6' }}>
+              <Form.Group widths={'equal'}>
+                <TextField id='firstName' name='firstName' showInlineError={true} placeholder={'First Name'}/>
+                <TextField id='lastName' name='lastName' showInlineError={true} placeholder={'Last Name'}/>
+              </Form.Group>
+              <TextField name='email' showInlineError={true} placeholder={'email'} disabled/>
+              <LongTextField id='bio' name='bio' placeholder='Write a little bit about yourself.'/>
+              <Form.Group widths={'equal'}>
+                <TextField name='phone' id='phone' showInlineError={true} placeholder={'(***) ***_****'}/>
+                <TextField name='picture' id='picture' showInlineError={true} placeholder={'URL to picture'}/>
+              </Form.Group>
+              <SubmitField id='Addprofile-submit' value='Submit'/>
+            </Segment>
+          </AutoForm>
+        </Grid.Column>
+      </Grid>
     );
   }
 }
@@ -69,7 +67,6 @@ AddUser.propTypes = {
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
-  // Ensure that minimongo is populated with all collections prior to running render().
   const sub1 = Meteor.subscribe(Profiles.userPublicationName);
   return {
     ready: sub1.ready(),

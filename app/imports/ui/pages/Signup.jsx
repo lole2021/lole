@@ -6,18 +6,16 @@ import { Accounts } from 'meteor/accounts-base';
 import { Profiles } from '../../api/profile/Profiles';
 
 class Signup extends React.Component {
-  /** Initialize state fields. */
+
   constructor(props) {
     super(props);
     this.state = { email: '', password: '', error: '', redirectToReferer: false };
   }
 
-  /** Update the form controls each time the user interacts with them. */
   handleChange= (e, { name, value }) => {
     this.setState({ [name]: value });
   }
 
-  /** Handle Signup submission. Create user account and a profile entry, then redirect to the AddUser page. */
   submit= () => {
     const { email, password } = this.state;
     Accounts.createUser({ email, username: email, password }, (err) => {
@@ -45,12 +43,10 @@ class Signup extends React.Component {
     return (
       <div className='pages-background'>
         <div>
-          <Container id="signup-page" style={{ paddingTop: '10px' }}>
+          <Container id="signup-page" style={{ paddingTop: '40px', paddingBottom: '100px' }}>
             <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
               <Grid.Column>
-                <Header as="h2" textAlign="center">
-                    Sign up for a new user account
-                </Header>
+                <Header as="h2" textAlign="center">Sign Up</Header>
                 <Form onSubmit={this.submit}>
                   <Segment stacked>
                     <Form.Input

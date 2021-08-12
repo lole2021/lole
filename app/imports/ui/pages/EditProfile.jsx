@@ -12,10 +12,7 @@ import { updateProfileMethod } from '../../startup/both/Methods';
 
 const bridge = new SimpleSchema2Bridge(Profiles.schema);
 
-/** Renders the EditUSer Page: what appears after the user logs in. */
 class EditProfile extends React.Component {
-
-  /** On submit, insert the data. */
   submit(data) {
     Meteor.call(updateProfileMethod, data, (error) => {
       if (error) {
@@ -26,7 +23,6 @@ class EditProfile extends React.Component {
     });
   }
 
-  /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
   }
@@ -37,28 +33,26 @@ class EditProfile extends React.Component {
     const profile = Profiles.collection.findOne({ email });
     const model = _.extend({}, profile);
     return (
-      <div id='edit-user-page' style={{ paddingTop: '20px' }}>
-        <Header as="h2" textAlign="center" inverted style={{ fontSize: '100px' }}>Edit Your Profile</Header>
-        <Grid id="EditUSer-page" container centered>
-          <Grid.Column>
-            <AutoForm model={model} schema={bridge} onSubmit={data => this.submit(data)}>
-              <Segment>
-                <Form.Group widths={'equal'}>
-                  <TextField id='firstName' name='firstName' showInlineError={true} placeholder={'First Name'}/>
-                  <TextField id='lastName' name='lastName' showInlineError={true} placeholder={'Last Name'}/>
-                  <TextField name='email' showInlineError={true} placeholder={'email'} disabled/>
-                </Form.Group>
-                <LongTextField id='bio' name='bio' placeholder='Write a little bit about yourself.'/>
-                <Form.Group widths={'equal'}>
-                  <TextField id='title' name='phone' showInlineError={true} placeholder={'Title'}/>
-                  <TextField id='picture' name='picture' showInlineError={true} placeholder={'URL to picture'}/>
-                </Form.Group>
-                <SubmitField id='editUser-page-submit' value='Update'/>
-              </Segment>
-            </AutoForm>
-          </Grid.Column>
-        </Grid>
-      </div>
+      <Grid container centered style={{ paddingTop: '30px', paddingBottom: '40px' }}>
+        <Grid.Column width={8}>
+          <AutoForm model={model} schema={bridge} onSubmit={data => this.submit(data)}>
+            <Header as="h2" textAlign="center">Welcome to Lole</Header>
+            <Segment style={{ backgroundColor: '#d9cbb6' }}>
+              <Form.Group widths={'equal'}>
+                <TextField id='firstName' name='firstName' showInlineError={true} placeholder={'First Name'}/>
+                <TextField id='lastName' name='lastName' showInlineError={true} placeholder={'Last Name'}/>
+              </Form.Group>
+              <TextField name='email' showInlineError={true} placeholder={'email'} disabled/>
+              <LongTextField id='bio' name='bio' placeholder='Write a little bit about yourself.'/>
+              <Form.Group widths={'equal'}>
+                <TextField name='phone' id='phone' showInlineError={true} placeholder={'(***) ***_****'}/>
+                <TextField name='picture' id='picture' showInlineError={true} placeholder={'URL to picture'}/>
+              </Form.Group>
+              <SubmitField id='Addprofile-submit' value='Submit'/>
+            </Segment>
+          </AutoForm>
+        </Grid.Column>
+      </Grid>
     );
   }
 }

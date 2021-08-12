@@ -16,7 +16,7 @@ class ProfilesCollection {
       lastName: { type: String, optional: true },
       bio: { type: String, optional: true },
       phone: { type: String, optional: true },
-      picture: { type: String, optional: true },
+      picture: { type: String, optional: true, defaultValue: 'https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png' },
     }, { tracker: Tracker });
     // Ensure collection documents obey schema.
     this.collection.attachSchema(this.schema);
