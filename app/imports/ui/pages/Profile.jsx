@@ -21,12 +21,12 @@ class Profile extends React.Component {
 
     return (
       <div style={{ paddingTop: '50px', paddingBottom: '50px' }}>
-        <Header as="h3" style={{ textAlign: 'center', paddingBottom: '10px' }}>Your Profile</Header>
+        <Header as="h1" textAlign="center" style={{ color: '#849ca4' }}><em>Your Profile</em></Header>
         <Grid id="profile-page" container centered>
           <Card color='blue'>
             <Image src={profile.picture}/>
             <Card.Content>
-              <Card.Header>{profile.firstName} {profile.firstName}</Card.Header>
+              <Card.Header>{profile.firstName} {profile.lastName}</Card.Header>
               <Card.Meta>
                 <span><em>{profile.email}</em></span>
               </Card.Meta>

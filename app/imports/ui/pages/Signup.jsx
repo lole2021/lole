@@ -41,14 +41,16 @@ class Signup extends React.Component {
     }
 
     return (
-      <div className='pages-background'>
+      <div className='signup-page'>
         <div>
-          <Container id="signup-page" style={{ paddingTop: '40px', paddingBottom: '100px' }}>
+          <Container id="signup-page">
             <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
               <Grid.Column>
-                <Header as="h2" textAlign="center">Sign Up</Header>
+                <Header as="h2" textAlign="center"style={{ color: '#849ca4' }}><em>
+                  Create a New Account
+                </em></Header>
                 <Form onSubmit={this.submit}>
-                  <Segment stacked>
+                  <Segment stacked style={{ backgroundColor: '#d9cbb6' }}>
                     <Form.Input
                       label="Email"
                       id="signup-form-email"
@@ -69,12 +71,11 @@ class Signup extends React.Component {
                       type="password"
                       onChange={this.handleChange}
                     />
-                    <Form.Button id="signup-form-submit" content="Submit"/>
+                    <Form.Button color="brown" id="signup-form-submit" content="Submit"/>
+                    <em>Already have an account?
+                      <Link to="/signin"> Click here.</Link></em>
                   </Segment>
                 </Form>
-                <Message>
-                    Already have an account? Login <Link to="/signin">here</Link>
-                </Message>
                 {this.state.error === '' ? (
                   ''
                 ) : (

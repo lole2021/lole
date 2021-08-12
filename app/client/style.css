@@ -6,7 +6,7 @@
 .signout {
   color: lightslategray;
   font-family: "Nanum Myeongjo";
-  margin-left: 300px;
+  margin-left: 260px;
 }
 
 .signup-page {
@@ -24,4 +24,31 @@
   color: lightslategray;
   font-size: 20px;
   text-align: justify;
+}
+
+.container-addprofile {
+  background: no-repeat center url("images/background.png");
+  background-size: 86%;
+  padding-bottom: 55px;
+  padding-top: 40px;
+}
+
+.edit-profile {
+  background: no-repeat center url("images/background.png");
+  background-size: 86%;
+  padding-bottom: 55px;
+  padding-top: 40px;
+}
+
+.signin-page {
+  background: no-repeat center url("images/background.png");
+  background-size: 86%;
+  padding-bottom: 160px;
+  padding-top: 40px;
+}
+.signup-page {
+  background: no-repeat center url("images/background.png");
+  background-size: 86%;
+  padding-bottom: 160px;
+  padding-top: 40px;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Segment, Header, Form, Loader } from 'semantic-ui-react';
-import { AutoForm, TextField, LongTextField, SubmitField } from 'uniforms-semantic';
+import { AutoForm, TextField, LongTextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Meteor } from 'meteor/meteor';
@@ -33,26 +33,28 @@ class EditProfile extends React.Component {
     const profile = Profiles.collection.findOne({ email });
     const model = _.extend({}, profile);
     return (
-      <Grid container centered style={{ paddingTop: '30px', paddingBottom: '40px' }}>
-        <Grid.Column width={8}>
-          <AutoForm model={model} schema={bridge} onSubmit={data => this.submit(data)}>
-            <Header as="h2" textAlign="center">Welcome to Lole</Header>
-            <Segment style={{ backgroundColor: '#d9cbb6' }}>
-              <Form.Group widths={'equal'}>
-                <TextField id='firstName' name='firstName' showInlineError={true} placeholder={'First Name'}/>
-                <TextField id='lastName' name='lastName' showInlineError={true} placeholder={'Last Name'}/>
-              </Form.Group>
-              <TextField name='email' showInlineError={true} placeholder={'email'} disabled/>
-              <LongTextField id='bio' name='bio' placeholder='Write a little bit about yourself.'/>
-              <Form.Group widths={'equal'}>
-                <TextField name='phone' id='phone' showInlineError={true} placeholder={'(***) ***_****'}/>
-                <TextField name='picture' id='picture' showInlineError={true} placeholder={'URL to picture'}/>
-              </Form.Group>
-              <SubmitField id='Addprofile-submit' value='Submit'/>
-            </Segment>
-          </AutoForm>
-        </Grid.Column>
-      </Grid>
+      <div className="edit-profile">
+        <Grid container centered>
+          <Grid.Column width={8}>
+            <AutoForm model={model} schema={bridge} onSubmit={data => this.submit(data)}>
+              <Header as="h1" textAlign="center" style={{ color: '#849ca4' }}><em>Edit Your Information</em></Header>
+              <Segment style={{ backgroundColor: '#d9cbb6' }}>
+                <Form.Group widths={'equal'}>
+                  <TextField id='firstName' name='firstName' showInlineError={true} placeholder={'First Name'}/>
+                  <TextField id='lastName' name='lastName' showInlineError={true} placeholder={'Last Name'}/>
+                </Form.Group>
+                <TextField name='email' showInlineError={true} placeholder={'email'} disabled/>
+                <LongTextField id='bio' name='bio' placeholder='Write a little bit about yourself.'/>
+                <Form.Group widths={'equal'}>
+                  <TextField name='phone' id='phone' showInlineError={true} placeholder={'(***) ***_****'}/>
+                  <TextField name='picture' id='picture' showInlineError={true} placeholder={'URL to picture'}/>
+                </Form.Group>
+                <Form.Button color="brown" id="editprofile-submit" content="Submit"/>
+              </Segment>
+            </AutoForm>
+          </Grid.Column>
+        </Grid>
+      </div>
     );
   }
 }
