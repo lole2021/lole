@@ -1,9 +1,31 @@
 import { Meteor } from 'meteor/meteor';
+import { Accounts } from 'meteor/accounts-base';
+import { Roles } from 'meteor/alanning:roles';
 import { Women } from '../../api/woman/Women';
 import { Kids } from '../../api/kid/Kids';
 import { Men } from '../../api/man/Men';
 import { Profiles } from '../../api/profile/Profiles';
 /* eslint-disable no-console */
+
+function createUser(email, password, role) {
+  console.log(`  Creating user ${email}.`);
+  const userID = Accounts.createUser({
+    username: email,
+    email: email,
+    password: password,
+  });
+  if (role === 'admin') {
+    Roles.createRole(role, { unlessExists: true });
+    Roles.addUsersToRoles(userID, 'admin');
+  }
+}
+
+function addProfile({ firstName, lastName, bio, phone, picture, email, role }) {
+  console.log(`Defining profile ${email}`);
+  createUser(email, role);
+  Profiles.collection.insert({ firstName, lastName, bio, phone, picture, email });
+
+}
 
 // Initialize the database with a default data document.
 function addWomanClothes(data) {
@@ -19,11 +41,6 @@ function addMenClothes(data) {
 function addKidsClothes(data) {
   console.log(`  Adding: ${data.name}`);
   Kids.collection.insert(data);
-}
-
-function addProfile({ email, firstName, lastName, bio, picture, phone }) {
-  console.log(`  Defining profile ${email}`);
-  Profiles.collection.insert({ email, firstName, lastName, bio, picture, phone });
 }
 
 if (Women.collection.find().count() === 0) {

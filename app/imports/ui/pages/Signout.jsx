@@ -10,7 +10,7 @@ export default class Signout extends React.Component {
     return (
       <Grid style={landingStyle} id='landing-page' container centered>
         <Grid.Column width={11}>
-          <h2 className="signout" >You are sign out!</h2>
+          <h2 className="signout" textAlign="center">We hope to see your soon!</h2>
           <Image size='massive' src='/images/landing.png'/>
         </Grid.Column>
 
