@@ -7,10 +7,6 @@ import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
-import ListStuff from '../pages/ListStuff';
-import ListStuffAdmin from '../pages/ListStuffAdmin';
-import AddStuff from '../pages/AddStuff';
-import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
@@ -25,6 +21,8 @@ import Profile from '../pages/Profile';
 import OurMission from '../pages/OurMission';
 import QandA from '../pages/QandA';
 import ContactUs from '../pages/ContactUs';
+import AddProfile from '../pages/AddProfile';
+import EditProfile from '../pages/EditProfile';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -41,6 +39,8 @@ class App extends React.Component {
             <Route path="/women" component={WomenClothes}/>
             <Route path="/men" component={MenClothes}/>
             <Route path="/kids" component={KidsClothes}/>
+            <ProtectedRoute path="/edituser" component={EditProfile}/>
+            <ProtectedRoute path="/adduser" component={AddProfile}/>
             <Route path="/woman/:_id" component= {WomanItemView}/>
             <Route path="/man/:_id" component= {ManItemView}/>
             <Route path="/kid/:_id" component= {KidItemView}/>
@@ -49,10 +49,6 @@ class App extends React.Component {
             <Route path="/qanda" component= {QandA}/>
             <Route path="/contactus" component= {ContactUs}/>
             <ProtectedRoute path="/profile" component={Profile}/>
-            <ProtectedRoute path="/list" component={ListStuff}/>
-            <ProtectedRoute path="/add" component={AddStuff}/>
-            <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
-            <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
             <Route component={NotFound}/>
           </Switch>
           <Footer/>
