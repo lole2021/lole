@@ -58,6 +58,7 @@ class WomanItemView extends React.Component {
 // Require the presence of a Contact document in the props object. Uniforms adds 'model' to the props, which we use.
 WomanItemView.propTypes = {
   kid: PropTypes.object,
+  comments: PropTypes.object,
   model: PropTypes.object,
   ready: PropTypes.bool.isRequired,
 };
