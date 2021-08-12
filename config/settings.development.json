@@ -4,15 +4,6 @@
     "appId": "D6eenEw42iFCgeujp",
     "appSecret": "45e3267e-f799-4a8f-b906-448f42ead67f"
   },
-  "defaultAccounts": [
-    { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com", "password": "changeme" }
-  ],
-
-  "defaultProfiles": [
-    { "email": "admin@foo.com", "firstName": "admin", "lastName": "admin", "bio": "Admin", "picture": "https://react.semantic-ui.com/images/avatar/large/matthew.png", "phone": "(310) 345-7536 " },
-    { "email": "john@foo.com", "firstName": "John", "lastName": "Smith", "bio": "Welcome to my closet!", "picture": "https://react.semantic-ui.com/images/avatar/large/daniel.jpg", "phone": "(310) 345-7536 "}
-  ],
 
   "defaultWomenClothes": [
     { "name": "Embroidered Scarf Blouse",
@@ -165,13 +156,6 @@
       "owner": "john@foo.com",
       "rating": "3"
     }
-  ],
-
-  "defaultData": [
-    { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
-    { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
-    { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
-    { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
   ],
 
   "loadAssetsFile":  false
