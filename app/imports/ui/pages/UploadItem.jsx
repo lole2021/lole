@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Segment, Header } from 'semantic-ui-react';
-import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-semantic';
+import { AutoForm, ErrorsField, SubmitField, SelectField, TextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -63,22 +63,22 @@ class UploadItem extends React.Component {
     return (
         <Grid id='upload-page' container centered>
           <Grid.Column>
-            <Header as="h2" textAlign="center" inverted>Upload Item</Header>
+            <Header as="h2" textAlign="center">Upload Item</Header>
             <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
               <Segment>
                 <TextField id='upload-item-form-name' name='name'/>
                 <TextField id='upload-item-form-brand' name='brand'/>
-                <TextField id='upload-item-form-category' name='category'/>
+                <SelectField id='upload-item-form-category' name='category'/>
                 <TextField id='upload-item-form-oldprice' name='oldprice'/>
                 <TextField id='upload-item-form-newprice' name='newprice'/>
                 <TextField id='upload-item-form-image1' name='image1'/>
                 <TextField id='upload-item-form-image2' name='image2'/>
                 <TextField id='upload-item-form-image3' name='image3'/>
                 <TextField id='upload-item-form-image4' name='image4'/>
-                <TextField id='upload-item-form-size' name='size'/>
+                <SelectField id='upload-item-form-size' name='size'/>
                 <TextField id='upload-item-form-status' name='status'/>
                 <TextField id='upload-item-form-description' name='description'/>
-                <TextField id='upload-item-form-condition' name='condition'/>
+                <SelectField id='upload-item-form-condition' name='condition'/>
                 <SubmitField id='upload-item-form-submit' value='Submit'/>
                 <ErrorsField/>
               </Segment>
