@@ -12,11 +12,12 @@ class NavBar extends React.Component {
     return (
       <Grid>
         <Menu widths={4} className="category" style={menuStyle} inverted>
-            [<Menu.Item as={NavLink} activeClassName="active" exact to="/women" key='women'>WOMEN</Menu.Item>,
-          <Menu.Item as={NavLink} activeClassName="active" exact to="/men" key='men'>MEN</Menu.Item>,
-          <Menu.Item as={NavLink} activeClassName="active" exact to="/kids" key='kids'>KIDS</Menu.Item>,
-          <Menu.Item as={NavLink} activeClassName="active" exact to="/sell" key='sell'>SELL</Menu.Item>,
-            ]
+          <Menu.Item as={NavLink} activeClassName="active" exact to="/women" key='women'>WOMEN</Menu.Item>
+          <Menu.Item as={NavLink} activeClassName="active" exact to="/men" key='men'>MEN</Menu.Item>
+          <Menu.Item as={NavLink} activeClassName="active" exact to="/kids" key='kids'>KIDS</Menu.Item>
+          {this.props.currentUser ? (
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/sell" key='sell'>SELL</Menu.Item>
+          ) : ''}
         </Menu>
       </Grid>
     );
