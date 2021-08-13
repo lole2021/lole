@@ -8,7 +8,7 @@ class ItemsCollection {
     this.name = 'ItemsCollection';
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
-    this.schema = new SimpleSchema ({
+    this.schema = new SimpleSchema({
       name: String,
       brand: String,
       category: {

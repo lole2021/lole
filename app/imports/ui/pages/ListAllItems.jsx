@@ -17,12 +17,12 @@ class ListAllItems extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-        <div id='listallitem-page' className="item-list"><Container>
-          <Header as="h3" textAlign="center">All Items</Header>
-          <Card.Group>
-            {this.props.items.map((item) => <AllProduct key={item._id} item={item} />)}
-          </Card.Group>
-        </Container></div>
+      <div id='listallitem-page' className="item-list"><Container>
+        <Header as="h3" textAlign="center">All Items</Header>
+        <Card.Group>
+          {this.props.items.map((item) => <AllProduct key={item._id} item={item} />)}
+        </Card.Group>
+      </Container></div>
     );
   }
 }
@@ -43,5 +43,3 @@ export default withTracker(() => {
     ready: (subscription.ready()),
   };
 })(ListAllItems);
-
-

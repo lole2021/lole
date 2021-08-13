@@ -7,28 +7,28 @@ import { withRouter, Link } from 'react-router-dom';
 class ItemList extends React.Component {
   render() {
     return (
-        <Card centered>
-          <Link to={`/woman/${this.props.item._id}`}>
-            <Image src={this.props.item.image1}/>
-          </Link>
-          <Card.Content>
-            <Card.Header>
-              <Link to={`/woman/${this.props.item._id}`}>{this.props.item.name}</Link>
-            </Card.Header>
-            <Card.Meta>Size: {this.props.item.size} | Brand: {this.props.item.brand} </Card.Meta>
-            <Card.Meta style={{ textDecorationLine: 'line-through' }}>${this.props.item.oldprice} </Card.Meta>
-            <Card.Meta>${this.props.item.newprice}</Card.Meta>
-            <Card.Header>
-              <Header textAlign='right'>
-                <Button basic size='tiny' color='brown'>{this.props.item.status}</Button>
-              </Header>
-            </Card.Header>
-          </Card.Content>
-          <Card.Content>
-            <Card.Meta>
-            </Card.Meta>
-          </Card.Content>
-        </Card>
+      <Card centered>
+        <Link to={`/woman/${this.props.item._id}`}>
+          <Image src={this.props.item.image1}/>
+        </Link>
+        <Card.Content>
+          <Card.Header>
+            <Link to={`/woman/${this.props.item._id}`}>{this.props.item.name}</Link>
+          </Card.Header>
+          <Card.Meta>Size: {this.props.item.size} | Brand: {this.props.item.brand} </Card.Meta>
+          <Card.Meta style={{ textDecorationLine: 'line-through' }}>${this.props.item.oldprice} </Card.Meta>
+          <Card.Meta>${this.props.item.newprice}</Card.Meta>
+          <Card.Header>
+            <Header textAlign='right'>
+              <Button basic size='tiny' color='brown'>{this.props.item.status}</Button>
+            </Header>
+          </Card.Header>
+        </Card.Content>
+        <Card.Content>
+          <Card.Meta>
+          </Card.Meta>
+        </Card.Content>
+      </Card>
     );
   }
 }
