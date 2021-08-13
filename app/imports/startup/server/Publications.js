@@ -6,6 +6,7 @@ import { Kids } from '../../api/kid/Kids';
 // eslint-disable-next-line import/named
 import { Comments } from '../../api/comment/Comments';
 import { Profiles } from '../../api/profile/Profiles';
+import { Items } from '../../api/item/Items';
 
 Meteor.publish(Profiles.userPublicationName, () => Profiles.collection.find());
 
@@ -64,6 +65,20 @@ Meteor.publish(Kids.adminPublicationName, function () {
 Meteor.publish(null, function () {
   if (this.userId) {
     return Meteor.roleAssignment.find({ 'user._id': this.userId });
+  }
+  return this.ready();
+});
+
+Meteor.publish(Items.allPublicationName, function () {
+  if (this.userId) {
+    return Items.collection.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish(Comments.allPublicationName, function () {
+  if (this.userId) {
+    return Comments.collection.find();
   }
   return this.ready();
 });

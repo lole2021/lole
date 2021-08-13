@@ -14,27 +14,72 @@ const formSchema = new SimpleSchema({
   category: {
     type: String,
     allowedValues: ['MEN', 'WOMEN', 'KIDS'],
-    defaultValue: 'choose',
+    defaultValue: 'MEN',
   },
   oldprice: Number,
   newprice: Number,
   image1: String,
-  image2: String,
-  image3: String,
-  image4: String,
+  image2: {
+    type: String,
+    optional: true,
+    custom: function () {
+      if (this.field('image2DNA').value === false && !this.isSet && (!this.operator || (this.value === null || this.value === ""))) {
+        console.log('in here');
+        return "required";
+      }
+    }
+  },
+  image3: {
+    type: String,
+    optional: true,
+    custom: function () {
+      if (this.field('image3DNA').value === false && !this.isSet && (!this.operator || (this.value === null || this.value === ""))) {
+        console.log('in here');
+        return "required";
+      }
+    }
+  },
+  image4: {
+    type: String,
+    optional: true,
+    custom: function () {
+      if (this.field('image4DNA').value === false && !this.isSet && (!this.operator || (this.value === null || this.value === ""))) {
+        console.log('in here');
+        return "required";
+      }
+    }
+  },
   size: {
     type: String,
-    allowedValues: ['S', 'M', 'L'],
+    allowedValues: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
     defaultValue: 'M',
   },
-  status: String,
-  description: String,
+  status: {
+    type: String,
+    optional: true,
+    custom: function () {
+      if (this.field('statusDNA').value === false && !this.isSet && (!this.operator || (this.value === null || this.value === ""))) {
+        console.log('in here');
+        return "required";
+      }
+    }
+  },
+  description: {
+    type: String,
+    max: 100,
+    optional: true,
+    custom: function () {
+      if (this.field('descriptionDNA').value === false && !this.isSet && (!this.operator || (this.value === null || this.value === ""))) {
+        console.log('in here');
+        return "required";
+      }
+    }
+  },
   condition: {
     type: String,
-    allowedValues: ['bad', 'good', 'excellent'],
+    allowedValues: ['poor', 'good', 'excellent'],
     defaultValue: 'good',
   },
-  owner: String,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);

@@ -24,6 +24,7 @@ import ContactUs from '../pages/ContactUs';
 import AddProfile from '../pages/AddProfile';
 import EditProfile from '../pages/EditProfile';
 import UploadItem from '../pages/UploadItem';
+import ListAllItems from '../pages/ListAllItems';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -38,6 +39,7 @@ class App extends React.Component {
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
             <Route path="/women" component={WomenClothes}/>
+            <Route path="/all" component={ListAllItems}/>
             <Route path="/men" component={MenClothes}/>
             <Route path="/kids" component={KidsClothes}/>
             <ProtectedRoute path="/edituser" component={EditProfile}/>

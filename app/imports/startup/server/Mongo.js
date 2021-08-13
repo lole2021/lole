@@ -5,6 +5,7 @@ import { Women } from '../../api/woman/Women';
 import { Kids } from '../../api/kid/Kids';
 import { Men } from '../../api/man/Men';
 import { Profiles } from '../../api/profile/Profiles';
+import { Items } from '../../api/item/Items';
 /* eslint-disable no-console */
 
 function createUser(email, password, role) {
@@ -41,6 +42,20 @@ function addMenClothes(data) {
 function addKidsClothes(data) {
   console.log(`  Adding: ${data.name}`);
   Kids.collection.insert(data);
+}
+
+/** Initialize the database with a default data document. */
+function addItem(data) {
+  console.log(` Adding: ${data.name} (${data.owner})`);
+  Items.collection.insert(data);
+}
+
+/** Initialize the collection if empty. */
+if (Items.collection.find().count() === 0) {
+  if (Meteor.settings.defaultData) {
+    console.log('Creating default data.');
+    Meteor.settings.defaultData.map(data => addItem(data));
+  }
 }
 
 if (Women.collection.find().count() === 0) {

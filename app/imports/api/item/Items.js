@@ -19,19 +19,35 @@ class ItemsCollection {
       oldprice: Number,
       newprice: Number,
       image1: String,
-      image2: String,
-      image3: String,
-      image4: String,
+      image2: {
+        type: String,
+        optional: true,
+      },
+      image3: {
+        type: String,
+        optional: true,
+      },
+      image4: {
+        type: String,
+        optional: true,
+      },
       size: {
         type: String,
-        allowedValues: ['S', 'M', 'L'],
+        allowedValues: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
         defaultValue: 'M',
       },
-      status: String,
-      description: String,
+      status: {
+        type: String,
+        optional: true,
+      },
+      description: {
+        type: String,
+        max: 100,
+        optional: true,
+      },
       condition: {
         type: String,
-        allowedValues: ['bad', 'good', 'excellent'],
+        allowedValues: ['poor', 'good', 'excellent'],
         defaultValue: 'good',
       },
       owner: String,
@@ -41,6 +57,8 @@ class ItemsCollection {
     // Define names for publications and subscriptions
     this.userPublicationName = `${this.name}.publication.user`;
     this.adminPublicationName = `${this.name}.publication.admin`;
+    this.allPublicationName = `${this.name}.publication.item`;
+    this.itemPublicationName = `${this.name}.publication.item`;
   }
 }
 
