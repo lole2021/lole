@@ -41,6 +41,7 @@ class NavBar extends React.Component {
                 <Dropdown.Menu>
                   {/* eslint-disable-next-line max-len */}
                   <Dropdown.Item icon="user" text="My Profile" as={NavLink} exact to="/profile" />
+                  <Dropdown.Item icon="money" text="Upload Item" as={NavLink} exact to="/upload" />
                   <Dropdown.Item id="navbar-sign-out" icon="sign out" text="Sign Out" as={NavLink} exact to="/signout"/>
                 </Dropdown.Menu>
               </Dropdown>
