@@ -21,6 +21,7 @@ import ContactUs from '../pages/ContactUs';
 import AddProfile from '../pages/AddProfile';
 import EditProfile from '../pages/EditProfile';
 import AddItem from '../pages/AddItem';
+import EditItems from '../pages/EditItems';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -35,13 +36,14 @@ class App extends React.Component {
             <Route path="/signin" component={Signin}/>
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
-            <Route path="/allclothes" component={AllClothes}/>
-            <ProtectedRoute path="/edituser" component={EditProfile}/>
-            <ProtectedRoute path="/adduser" component={AddProfile}/>
-            <Route path="/woman/:_id" component= {SeeItem}/>
-            <Route path="/ourmission" component= {OurMission}/>
             <Route path="/qanda" component= {QandA}/>
             <Route path="/contactus" component= {ContactUs}/>
+            <Route path="/allclothes" component={AllClothes}/>
+            <Route path="/woman/:_id" component= {SeeItem}/>
+            <Route path="/ourmission" component= {OurMission}/>
+            <ProtectedRoute path="/edititem" component={EditItems}/>
+            <ProtectedRoute path="/edituser" component={EditProfile}/>
+            <ProtectedRoute path="/adduser" component={AddProfile}/>
             <ProtectedRoute path="/profile" component={Profile}/>
             <ProtectedRoute path="/additem" component={AddItem}/>
             <Route component={NotFound}/>
