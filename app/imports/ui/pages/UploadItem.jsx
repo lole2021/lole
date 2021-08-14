@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Segment, Header } from 'semantic-ui-react';
+import { Grid, Segment, Header, Form } from 'semantic-ui-react';
 import { AutoForm, ErrorsField, SubmitField, SelectField, TextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
@@ -80,20 +80,28 @@ class UploadItem extends React.Component {
         <Grid.Column>
           <Header as="h2" textAlign="center">Upload Item</Header>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
-            <Segment>
-              <TextField id='upload-item-form-name' name='name'/>
-              <TextField id='upload-item-form-brand' name='brand'/>
-              <SelectField id='upload-item-form-category' name='category'/>
-              <TextField id='upload-item-form-oldprice' name='oldprice'/>
-              <TextField id='upload-item-form-newprice' name='newprice'/>
-              <TextField id='upload-item-form-image1' name='image1'/>
-              <TextField id='upload-item-form-image2' name='image2'/>
-              <TextField id='upload-item-form-image3' name='image3'/>
-              <TextField id='upload-item-form-image4' name='image4'/>
-              <SelectField id='upload-item-form-size' name='size'/>
-              <TextField id='upload-item-form-status' name='status'/>
-              <TextField id='upload-item-form-description' name='description'/>
-              <SelectField id='upload-item-form-condition' name='condition'/>
+            <Segment style={{ backgroundColor: '#f9f7f1' }}>
+              <Form.Group widths={'equal'}>
+                <TextField id='upload-item-form-name' name='name' placeholder={'Name'}/>
+                <TextField id='upload-item-form-brand' name='brand' placeholder={'Brand'}/>
+              </Form.Group>
+              <Form.Group widths={'equal'}>
+                <SelectField id='upload-item-form-category' name='category' placeholder={'Category'}/>
+                <TextField id='upload-item-form-oldprice' name='oldprice' placeholder={'Original Price'}/>
+                <TextField id='upload-item-form-newprice' name='newprice' placeholder={'Price'}/>
+              </Form.Group>
+              <Form.Group widths={'equal'}>
+                <TextField id='upload-item-form-image1' name='image1'/>
+                <TextField id='upload-item-form-image2' name='image2'/>
+                <TextField id='upload-item-form-image3' name='image3'/>
+                <TextField id='upload-item-form-image4' name='image4'/>
+              </Form.Group>
+              <Form.Group widths={'equal'}>
+                <SelectField id='upload-item-form-size' name='size'/>
+                <TextField id='upload-item-form-status' name='status'/>
+                <SelectField id='upload-item-form-condition' name='condition'/>
+              </Form.Group>
+              <TextField id='upload-item-form-description' name='description' placeholder={'Description of the item.'}/>
               <SubmitField id='upload-item-form-submit' value='Submit'/>
               <ErrorsField/>
             </Segment>
