@@ -5,7 +5,7 @@ import { Container, Loader, Card, Input } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Clothes } from '../../api/clothes/Clothes';
-import Woman from '../components/Woman';
+import ClothesCard from '../components/ClothesCard';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class AllClothes extends React.Component {
@@ -16,10 +16,10 @@ class AllClothes extends React.Component {
 
   handleChange = (e, { value }) => this.setState({ search: value });
 
-  WomenSearch = (woman) => {
+  WomenSearch = (clothes) => {
     const { search } = this.state;
     const lowerCase = search.toLowerCase();
-    return woman.name.toLowerCase().startsWith(lowerCase);
+    return clothes.name.toLowerCase().startsWith(lowerCase);
   }
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
@@ -29,8 +29,8 @@ class AllClothes extends React.Component {
 
   // Render the page once subscriptions have been received.
   renderPage() {
-    const allFirstNames = _.filter(this.props.women, this.WomenSearch);
-    const sorted = _.sortBy(allFirstNames, 'name');
+    const allclothes = _.filter(this.props.clothes, this.WomenSearch);
+    const sorted = _.sortBy(allclothes, 'name');
 
     return (
       <Container style={{ paddingBottom: '50px' }}>
@@ -39,7 +39,7 @@ class AllClothes extends React.Component {
           onChange={this.handleChange}/>
         <br/>
         <Card.Group>
-          {sorted.map((women, index) => <Woman key={index} woman={women}/>)}
+          {sorted.map((clothes, index) => <ClothesCard key={index} clothes={clothes}/>)}
         </Card.Group>
       </Container>
     );
@@ -48,7 +48,7 @@ class AllClothes extends React.Component {
 
 // Require an array of Stuff documents in the props.
 AllClothes.propTypes = {
-  women: PropTypes.array.isRequired,
+  clothes: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -58,7 +58,7 @@ export default withTracker(() => {
   const subscription = Meteor.subscribe(Clothes.userPublicationName);
   const ready = subscription.ready();
   return {
-    women: Clothes.collection.find({}).fetch(),
+    clothes: Clothes.collection.find({}).fetch(),
     ready,
   };
 })(AllClothes);
