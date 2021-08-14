@@ -12,12 +12,8 @@ import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
-import WomenClothes from '../pages/WomenClothes';
-import MenClothes from '../pages/MenClothes';
-import KidsClothes from '../pages/KidsClothes';
-import WomanItemView from '../pages/WomanItemView';
-import ManItemView from '../pages/ManItemView';
-import KidItemView from '../pages/KidItemView';
+import AllClothes from '../pages/AllClothes';
+import WomanItemView from '../pages/SeeItem';
 import Profile from '../pages/Profile';
 import OurMission from '../pages/OurMission';
 import QandA from '../pages/QandA';
@@ -40,16 +36,11 @@ class App extends React.Component {
             <Route path="/signin" component={Signin}/>
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
-            <Route path="/women" component={WomenClothes}/>
+            <Route path="/allclothes" component={AllClothes}/>
             <Route path="/all" component={ListAllItems}/>
-            <Route path="/men" component={MenClothes}/>
-            <Route path="/kids" component={KidsClothes}/>
             <ProtectedRoute path="/edituser" component={EditProfile}/>
             <ProtectedRoute path="/adduser" component={AddProfile}/>
             <Route path="/woman/:_id" component= {WomanItemView}/>
-            <Route path="/man/:_id" component= {ManItemView}/>
-            <Route path="/kid/:_id" component= {KidItemView}/>
-            <Route path="/kid/:_id" component= {KidItemView}/>
             <Route path="/ourmission" component= {OurMission}/>
             <Route path="/qanda" component= {QandA}/>
             <Route path="/contactus" component= {ContactUs}/>

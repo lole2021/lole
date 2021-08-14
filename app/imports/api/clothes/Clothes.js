@@ -3,10 +3,10 @@ import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
 /** Encapsulates state and variable values for this collection. */
-class MenCollection {
+class ClothesCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'MenCollection';
+    this.name = 'ClothesCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
@@ -34,4 +34,4 @@ class MenCollection {
   }
 }
 
-export const Men = new MenCollection();
+export const Clothes = new ClothesCollection();

@@ -1,8 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
-import { Women } from '../../api/woman/Women';
-import { Men } from '../../api/man/Men';
-import { Kids } from '../../api/kid/Kids';
+import { Clothes } from '../../api/clothes/Clothes';
 // eslint-disable-next-line import/named
 import { Comments } from '../../api/comment/Comments';
 import { Profiles } from '../../api/profile/Profiles';
@@ -17,46 +15,18 @@ Meteor.publish(Comments.userPublicationName, function () {
   return this.ready();
 });
 
-Meteor.publish(Women.userPublicationName, function () {
+Meteor.publish(Clothes.userPublicationName, function () {
   if (this.userId) {
-    return Women.collection.find();
-  }
-  return this.ready();
-});
-
-Meteor.publish(Men.userPublicationName, function () {
-  if (this.userId) {
-    return Men.collection.find({});
-  }
-  return this.ready();
-});
-
-Meteor.publish(Kids.userPublicationName, function () {
-  if (this.userId) {
-    return Kids.collection.find({});
+    return Clothes.collection.find();
   }
   return this.ready();
 });
 
 /* Admin Level */
 
-Meteor.publish(Women.adminPublicationName, function () {
+Meteor.publish(Clothes.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-    return Women.collection.find();
-  }
-  return this.ready();
-});
-
-Meteor.publish(Men.adminPublicationName, function () {
-  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-    return Men.collection.find();
-  }
-  return this.ready();
-});
-
-Meteor.publish(Kids.adminPublicationName, function () {
-  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-    return Kids.collection.find();
+    return Clothes.collection.find();
   }
   return this.ready();
 });

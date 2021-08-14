@@ -4,11 +4,11 @@ import { _ } from 'meteor/underscore';
 import { Container, Loader, Card, Input } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import { Men } from '../../api/man/Men';
-import Man from '../components/Man';
+import { Clothes } from '../../api/clothes/Clothes';
+import Woman from '../components/Woman';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-class MenClothes extends React.Component {
+class AllClothes extends React.Component {
   constructor(props) {
     super(props);
     this.state = { search: '' };
@@ -29,7 +29,7 @@ class MenClothes extends React.Component {
 
   // Render the page once subscriptions have been received.
   renderPage() {
-    const allFirstNames = _.filter(this.props.men, this.WomenSearch);
+    const allFirstNames = _.filter(this.props.women, this.WomenSearch);
     const sorted = _.sortBy(allFirstNames, 'name');
 
     return (
@@ -39,7 +39,7 @@ class MenClothes extends React.Component {
           onChange={this.handleChange}/>
         <br/>
         <Card.Group>
-          {sorted.map((men, index) => <Man key={index} man={men}/>)}
+          {sorted.map((women, index) => <Woman key={index} woman={women}/>)}
         </Card.Group>
       </Container>
     );
@@ -47,18 +47,18 @@ class MenClothes extends React.Component {
 }
 
 // Require an array of Stuff documents in the props.
-MenClothes.propTypes = {
-  men: PropTypes.array.isRequired,
+AllClothes.propTypes = {
+  women: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe(Men.userPublicationName);
+  const subscription = Meteor.subscribe(Clothes.userPublicationName);
   const ready = subscription.ready();
   return {
-    men: Men.collection.find({}).fetch(),
+    women: Clothes.collection.find({}).fetch(),
     ready,
   };
-})(MenClothes);
+})(AllClothes);

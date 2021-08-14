@@ -5,7 +5,7 @@
     "appSecret": "45e3267e-f799-4a8f-b906-448f42ead67f"
   },
 
-  "defaultWomenClothes": [
+  "defaultClothes": [
     { "name": "Embroidered Scarf Blouse",
       "brand": "Farm Rio",
       "category": "woman",
@@ -50,9 +50,7 @@
       "description": "Genuine Leather\nOrange/Neon Coral. Photo on mannequin shows best color. Not orange!\nGold tone hardware\nTurn lock front pocket\nAdjustable crossbody shoulder strap\nZip closure with inside zip pocket and 2 interior slide in pockets fits phone.\n\nEUC! Pre owned in beautiful condition. Clean interior very lightly used. Bottom show virtually no scuffs. Maybe some very light discoloration at bottom corners.",
       "condition": "excellent",
       "owner": "john@foo.com"
-    }
-  ],
-  "defaultMenClothes": [
+    },
     { "name": "Retro Mid White Yellow",
       "brand": "Nike Air",
       "category": "man",
@@ -97,9 +95,7 @@
       "description": "My husband's had this jacket over 20 years. He paid over $500 for this jacket. It is a riding jacket meant to be for motorcycle riders. There is no major damage. The leather is still super soft. Only a few slight marks as you can see in the photos. Size medium",
       "condition": "good",
       "owner": "john@foo.com"
-    }
-  ],
-  "defaultKidsClothes": [
+    },
     { "name": "High Bio Hack Shoes",
       "brand": "Nike Air",
       "category": "kid",
@@ -144,17 +140,6 @@
       "description": "These would be so cute with jeans, dresses, and leggings. Purchased for my little girl but she never got to wear them this winter. 100% authentic bought from Gucci but I no longer have the box or receipt cause I was planning on keeping.",
       "condition": "good",
       "owner": "john@foo.com"
-    }
-  ],
-
-  "defaultProductReviews": [
-    {
-      "createdAt": "04/05/21",
-      "womenItemName": "Tropical Collage Tunic Dress",
-      "brand": "FARM",
-      "review": "There's a quiz every week, plus two midterms and there's not enough time to complete them. Most coding quizzes I don't get the chance to finish, no matter how well I understand the material since we're only given two minutes. He spends class time going over how to do the homework, which I appreciate. Unless you have friends, you work alone in lab.",
-      "owner": "john@foo.com",
-      "rating": "3"
     }
   ],
 

@@ -1,9 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
 import { Roles } from 'meteor/alanning:roles';
-import { Women } from '../../api/woman/Women';
-import { Kids } from '../../api/kid/Kids';
-import { Men } from '../../api/man/Men';
+import { Clothes } from '../../api/clothes/Clothes';
 import { Profiles } from '../../api/profile/Profiles';
 import { Items } from '../../api/item/Items';
 /* eslint-disable no-console */
@@ -29,19 +27,9 @@ function addProfile({ firstName, lastName, bio, phone, picture, email, role }) {
 }
 
 // Initialize the database with a default data document.
-function addWomanClothes(data) {
+function addClothes(data) {
   console.log(`  Adding: ${data.name}`);
-  Women.collection.insert(data);
-}
-
-function addMenClothes(data) {
-  console.log(`  Adding: ${data.name}`);
-  Men.collection.insert(data);
-}
-
-function addKidsClothes(data) {
-  console.log(`  Adding: ${data.name}`);
-  Kids.collection.insert(data);
+  Clothes.collection.insert(data);
 }
 
 /** Initialize the database with a default data document. */
@@ -58,24 +46,10 @@ if (Items.collection.find().count() === 0) {
   }
 }
 
-if (Women.collection.find().count() === 0) {
-  if (Meteor.settings.defaultWomenClothes) {
-    console.log('Creating default Women Clothes.');
-    Meteor.settings.defaultWomenClothes.map(data => addWomanClothes(data));
-  }
-}
-
-if (Men.collection.find().count() === 0) {
-  if (Meteor.settings.defaultMenClothes) {
-    console.log('Creating default Men Clothes.');
-    Meteor.settings.defaultMenClothes.map(data => addMenClothes(data));
-  }
-}
-
-if (Kids.collection.find().count() === 0) {
-  if (Meteor.settings.defaultKidsClothes) {
-    console.log('Creating default Kid Clothes.');
-    Meteor.settings.defaultKidsClothes.map(data => addKidsClothes(data));
+if (Clothes.collection.find().count() === 0) {
+  if (Meteor.settings.defaultClothes) {
+    console.log('Creating default clothes.');
+    Meteor.settings.defaultClothes.map(data => addClothes(data));
   }
 }
 
