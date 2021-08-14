@@ -1,7 +1,7 @@
 .landing {
   color: lightslategray;
   font-family: "Nanum Myeongjo";
-  margin-left: 130px;
+  margin-left: 190px;
 }
 .signout {
   color: lightslategray;
@@ -52,3 +52,15 @@
   padding-bottom: 160px;
   padding-top: 40px;
 }
+
+.mission-page {
+  background: no-repeat center url("images/background.png");
+  background-size: 86%;
+  padding-bottom: 160px;
+  padding-top: 40px;
+}
+
+.contactus-page {
+
+}
+

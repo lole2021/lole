@@ -31,7 +31,8 @@ class Nav extends React.Component {
           ) : (
             <Dropdown id="navbar-current-user" text={this.props.currentUser} pointing="top right" icon={'user'} >
               <Dropdown.Menu id="back">
-                <Dropdown.Item id="profile-dropdown" icon="address card" text="My Profile" as={NavLink} exact to="/profile"/>
+                <Dropdown.Item id="profile-dropdown" icon="address book" text="My Profile" as={NavLink} exact to="/profile"/>
+                <Dropdown.Item as={NavLink} icon="shirt" icone="dollar sign" exact to="/additem" key='additem'>Sell Item</Dropdown.Item>
                 <Dropdown.Item id="navbar-sign-out" icon="sign out" text="Sign Out" as={NavLink} exact to="/signout"/>
               </Dropdown.Menu>
             </Dropdown>

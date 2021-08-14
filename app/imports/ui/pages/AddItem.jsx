@@ -30,7 +30,7 @@ class AddItem extends React.Component {
     return (
       <Grid container centered>
         <Grid.Column>
-          <Header as="h2" textAlign="center" >Add Item</Header>
+          <Header style={{ backgroundColor: '#f9f7f1' }} as="h2" textAlign="center" >Add Item</Header>
           <br/><br/>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
             <Segment>

@@ -6,8 +6,8 @@ class Landing extends React.Component {
   render() {
     const landingStyle = { paddingBottom: '50px', paddingTop: '50px' };
     return (
-      <Grid style={landingStyle} id='landing-page' container centered>
-        <Grid.Column width={11}>
+      <Grid style={landingStyle} id='qanda' container centered>
+        <Grid.Column width={10}>
           <h2 className="landing">Q&A Support</h2>
           <p className="mission-text">Local Buyers</p>
           <p className="mission-text">There are many ways to purchase items on LOLE! We offer in-person meet-ups that allow

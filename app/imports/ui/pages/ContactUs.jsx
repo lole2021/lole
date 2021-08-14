@@ -6,7 +6,7 @@ class Landing extends React.Component {
   render() {
     const landingStyle = { paddingBottom: '50px', paddingTop: '50px' };
     return (
-      <Grid style={landingStyle} id='landing-page' container centered>
+      <Grid style={landingStyle} id='contactus-page' container centered>
         <Grid.Column width={11}>
           <h2 className="landing" >Contact Us</h2>
           <p className="mission-text">For any inquiries, please do not hesitate to contact us. </p>

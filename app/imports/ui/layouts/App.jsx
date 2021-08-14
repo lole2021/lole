@@ -21,7 +21,6 @@ import ContactUs from '../pages/ContactUs';
 import AddProfile from '../pages/AddProfile';
 import EditProfile from '../pages/EditProfile';
 import AddItem from '../pages/AddItem';
-import EditItems from '../pages/EditItems';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -41,7 +40,6 @@ class App extends React.Component {
             <Route path="/allclothes" component={AllClothes}/>
             <Route path="/woman/:_id" component= {SeeItem}/>
             <Route path="/ourmission" component= {OurMission}/>
-            <ProtectedRoute path="/edititem" component={EditItems}/>
             <ProtectedRoute path="/edituser" component={EditProfile}/>
             <ProtectedRoute path="/adduser" component={AddProfile}/>
             <ProtectedRoute path="/profile" component={Profile}/>
