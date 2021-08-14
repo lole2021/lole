@@ -24,11 +24,6 @@ class ClothesCard extends React.Component {
             </Header>
           </Card.Header>
         </Card.Content>
-        <Card.Content>
-          <Card.Meta>
-            <Icon name='user'/>   {this.props.clothes.email}
-          </Card.Meta>
-        </Card.Content>
       </Card>
     );
   }

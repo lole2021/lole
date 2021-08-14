@@ -10,9 +10,9 @@ class Landing extends React.Component {
         <Grid.Column width={8}>
           <h2 className="landing">Our Mission</h2>
           <p className="mission-text">Our mission is to streamline the process of online buying and selling of clothes.
-              We offer our customers garments of excellent quality and price, sold by those in within our local community. Customers and
-              sellers alike will feel more confident with their interactions, establishing rapport with each other, and promoting healthy
-              business relationships. </p>
+            The idea is to encourage the transition to a cleaner world, taking into account that second-hand clothes are
+            an alternative for conscious consumption.We offer our customers clothes of excellent quality and price, sold
+            by those in within their local community. </p>
           <Image size='massive' src='images/background.png'/>
         </Grid.Column>
 
