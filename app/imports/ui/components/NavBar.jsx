@@ -14,7 +14,7 @@ class NavBar extends React.Component {
         <Menu widths={4} className="category" style={menuStyle} inverted>
           <Menu.Item as={NavLink} activeClassName="active" exact to="/allclothes" key='allclothes'>BUY</Menu.Item>
           {this.props.currentUser ? (
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/upload" key='upload'>SELL</Menu.Item>
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/additem" key='additem'>SELL</Menu.Item>
           ) : ''}
         </Menu>
       </Grid>

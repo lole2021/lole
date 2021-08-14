@@ -20,7 +20,7 @@ import QandA from '../pages/QandA';
 import ContactUs from '../pages/ContactUs';
 import AddProfile from '../pages/AddProfile';
 import EditProfile from '../pages/EditProfile';
-import UploadItem from '../pages/UploadItem';
+import AddItem from '../pages/AddItem';
 import ListAllItems from '../pages/ListAllItems';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
@@ -45,7 +45,7 @@ class App extends React.Component {
             <Route path="/qanda" component= {QandA}/>
             <Route path="/contactus" component= {ContactUs}/>
             <ProtectedRoute path="/profile" component={Profile}/>
-            <ProtectedRoute path="/upload" component={UploadItem}/>
+            <ProtectedRoute path="/additem" component={AddItem}/>
             <Route component={NotFound}/>
           </Switch>
           <Footer/>
