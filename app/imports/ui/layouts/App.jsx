@@ -13,7 +13,7 @@ import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import AllClothes from '../pages/AllClothes';
-import WomanItemView from '../pages/SeeItem';
+import SeeItem from '../pages/SeeItem';
 import Profile from '../pages/Profile';
 import OurMission from '../pages/OurMission';
 import QandA from '../pages/QandA';
@@ -21,7 +21,6 @@ import ContactUs from '../pages/ContactUs';
 import AddProfile from '../pages/AddProfile';
 import EditProfile from '../pages/EditProfile';
 import AddItem from '../pages/AddItem';
-import ListAllItems from '../pages/ListAllItems';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -37,10 +36,9 @@ class App extends React.Component {
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
             <Route path="/allclothes" component={AllClothes}/>
-            <Route path="/all" component={ListAllItems}/>
             <ProtectedRoute path="/edituser" component={EditProfile}/>
             <ProtectedRoute path="/adduser" component={AddProfile}/>
-            <Route path="/woman/:_id" component= {WomanItemView}/>
+            <Route path="/woman/:_id" component= {SeeItem}/>
             <Route path="/ourmission" component= {OurMission}/>
             <Route path="/qanda" component= {QandA}/>
             <Route path="/contactus" component= {ContactUs}/>
