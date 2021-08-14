@@ -53,7 +53,6 @@ class AddItem extends React.Component {
                 <TextField name='condition' placeholder={'Condition'}/>
                 <TextField name='category' placeholder={'Category'}/>
                 <TextField name='status' placeholder={'Status'}/>
-                <TextField name='condition' placeholder={'Condition'}/>
               </Form.Group>
               <TextField name='owner' placeholder={'Leave your email.'}/>
               <TextField name='description' placeholder={'Description'}/>
