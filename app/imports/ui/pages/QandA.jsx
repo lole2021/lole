@@ -8,14 +8,32 @@ class Landing extends React.Component {
     return (
       <Grid style={landingStyle} id='landing-page' container centered>
         <Grid.Column width={11}>
-          <h2 className="landing">Q&A</h2>
-          <p className="mission-text">Q) How can I use this site as a buyer or seller?</p>
-          <p className="mission-text">- A) Please fill out your profile after signing up.</p>
-          <p className="mission-text">Q) If I want to sell clothes, what should I do?</p>
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
-          <p className="mission-text">- A) Please click on the 'POST ITEM' button in red at the top right of the site.</p>
-          <p className="mission-text">Q) I want to buy clothes, what should I do?</p>
-          <p className="mission-text">- A) You can find clothes in the category you want to purchase. You can also use the search bar to navigave for items.</p>
+          <h2 className="landing">Q&A Support</h2>
+          <p className="mission-text">Local Buyers</p>
+          <p className="mission-text">There are many ways to purchase items on LOLE! We offer in-person meet-ups that allow
+          you and your seller to meet up to make an item.
+          <br></br>
+          <strong>Buying from a verified seller:</strong>
+            <ul>
+              <li>Meet in person to buy and sell your items.</li>
+              <li>Make your offers, then accept or decline based on the agreement.</li>
+            </ul>
+            </p>
+          <p className="mission-text">Community Sellers</p>
+          <p className="mission-text">Our application makes it easy to streamline the process of selling your items for cash!
+          <br></br>
+          <strong>Selling as a verified seller:</strong>
+          <ul>
+            <li>Create and online profile for more visibility.</li>
+            <li>Upload the items that you wish to sell.</li>
+            <li>Buyers will contact you once they find an item that you are interested in. If you both agree to the price, meet up will be determined.</li>
+            <li>Local purchases will be made with cash only, making it easy for you to receive your payment quickly.</li>
+          </ul>
+          </p>
+          <p className="mission-text">Purchasing From Verified Sellers</p>
+          <p className="mission-text">All of our users on this site are verified as users before being able to post their items for sale.
+          You won't need to worry about an item that isn't in stock, or bought from users that don't exist - we make it easy to identify those
+          who are verified sellers. This makes the purchasing process easy for both you and the seller!</p>
           <Image size='massive' src='/images/landing.png'/>
         </Grid.Column>
       </Grid>
